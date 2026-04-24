@@ -9,22 +9,25 @@ This repository contains my submission for the CRAFTSMAN+ take-home exercises:
 
 - `submission-rag-architecture.md`: Final architecture write-up for storage/indexing and chatbot retrieval/generation.
 - `tagging-client.ts`: Typed client module with retries, chunked concurrency, discriminated union result types, and stats tracking.
-- `take-home-rag-architecture.md`: Provided architecture prompt.
-- `take-home-rag-challenge.md`: Provided TypeScript coding challenge prompt.
+- `demo.ts`: Small runnable demo that tags sample assets and prints outputs + stats.
 
-## Run the TypeScript Challenge Locally
+## Run Locally
 
 Prerequisites:
 
 - Node.js 18+ (or equivalent environment with `npx`)
 
-Quick run:
+Run the demo:
 
 ```bash
-npx ts-node tagging-client.ts
+npx tsx demo.ts
 ```
 
-Note: `tagging-client.ts` exports types and `TaggingService`. To execute behavior directly, import it from a small test harness (or run in a TS sandbox) and call `tagAsset`/`tagBatch`.
+Notes:
+
+- `tagging-client.ts` exports types and `TaggingService`; it does not print output by itself.
+- `demo.ts` is the executable harness used to run `tagAsset`, `tagBatch`, and `getStats`.
+- `tsx` is used for runtime execution compatibility on newer Node versions.
 
 ## Notes
 
